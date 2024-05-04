@@ -1,0 +1,9 @@
+error_log
+
+.ea-php-cli.cache
+
+.well-known
+
+.wp-cli
+
+cgi-bin

@@ -1,0 +1,16 @@
+Options All -Indexes
+ErrorDocument 404 /notfound.html
+redirect /member/config.php /member/
+DirectoryIndex index.php
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+# deny from 182.18.165.6
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
